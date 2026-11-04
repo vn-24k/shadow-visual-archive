@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Compass, Sparkles } from "lucide-react";
-import { soundFX } from "./sound-fx";
+import { Compass } from "lucide-react";
 
 export function ShadowHero() {
   const [activeKeyword, setActiveKeyword] = useState<string>("REFLECTION");
-
   const keywords = ["SILENCE", "REFLECTION", "GROWTH", "FREEDOM", "YOU"];
 
   return (
@@ -35,18 +33,14 @@ export function ShadowHero() {
             </p>
           </div>
 
-          {/* Contemplation Keywords List (Interactive Kokonut/Aceternity style) */}
+          {/* Contemplation Keywords List */}
           <div className="flex flex-col gap-1.5 my-6">
             {keywords.map((kw) => {
               const isSelected = activeKeyword === kw;
               return (
                 <button
                   key={kw}
-                  onClick={() => {
-                    setActiveKeyword(kw);
-                    soundFX.playClick();
-                  }}
-                  onMouseEnter={() => soundFX.playHover()}
+                  onClick={() => setActiveKeyword(kw)}
                   className={`text-left text-xs font-mono tracking-[0.3em] transition-all duration-300 flex items-center gap-2.5 ${
                     isSelected
                       ? "text-amber-200 font-semibold translate-x-2"
@@ -76,25 +70,20 @@ export function ShadowHero() {
 
         {/* Center Column: The Double-Exposure Artwork Poster */}
         <div className="lg:col-span-5 relative flex justify-center items-center z-10">
-          {/* Subtle Lunar Aura Glow */}
           <div className="absolute w-80 h-80 rounded-full bg-amber-200/10 blur-[100px] pointer-events-none -z-10" />
 
-          {/* Master Artwork Frame */}
           <div className="relative group max-w-[420px] w-full rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-white/10 hover:border-amber-200/30 transition-all duration-700">
             <img
               src="/assets/shadow/shadow-hero-art.jpg"
               alt="The Inner Journey - Series 04"
               className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
             />
-            
-            {/* Fine 1px Editorial Frame Inset */}
             <div className="absolute inset-2 border border-white/15 pointer-events-none rounded-xl" />
           </div>
         </div>
 
         {/* Right Column: Quotes, Artisan Seal & Series Thumbnail */}
         <div className="lg:col-span-3 flex flex-col justify-between h-full z-20 text-right">
-          {/* Right Poetic Callout */}
           <div className="mb-10">
             <p className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase leading-relaxed max-w-[190px] ml-auto">
               It's not the place that changes you. It's what you become along the way.
@@ -104,12 +93,10 @@ export function ShadowHero() {
           {/* Traditional Artisan Hanko Seal Stamp (夢 - Dream) */}
           <div className="my-auto flex justify-end">
             <div
-              onMouseEnter={() => soundFX.playHover()}
-              onClick={() => soundFX.playWarmChime()}
-              className="group cursor-pointer w-11 h-11 border-2 border-red-700 bg-red-950/40 rounded-sm flex items-center justify-center shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.7)] transition-all duration-300"
+              className="w-11 h-11 border-2 border-red-700 bg-red-950/40 rounded-sm flex items-center justify-center shadow-[0_0_15px_rgba(185,28,28,0.4)]"
               title="Artisan Seal: Yume (Dream)"
             >
-              <span className="font-serif text-lg font-bold text-red-400 group-hover:scale-110 transition-transform">
+              <span className="font-serif text-lg font-bold text-red-400">
                 夢
               </span>
             </div>
@@ -124,7 +111,7 @@ export function ShadowHero() {
               <img
                 src="/assets/shadow/mountain-thumb.jpg"
                 alt="Series 05 Preview"
-                className="w-20 h-28 object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+                className="w-20 h-28 object-cover grayscale contrast-125"
               />
             </div>
           </div>

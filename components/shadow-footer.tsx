@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { soundFX } from "./sound-fx";
 
 export function ShadowFooter() {
   return (
@@ -17,32 +16,16 @@ export function ShadowFooter() {
         </div>
 
         <div className="flex flex-wrap items-center gap-8 text-[11px] tracking-widest uppercase">
-          <a
-            href="#"
-            onMouseEnter={() => soundFX.playHover()}
-            className="hover:text-amber-200 transition"
-          >
+          <a href="#" className="hover:text-amber-200 transition">
             Archive Index
           </a>
-          <a
-            href="#"
-            onMouseEnter={() => soundFX.playHover()}
-            className="hover:text-amber-200 transition"
-          >
+          <a href="#" className="hover:text-amber-200 transition">
             Monographs
           </a>
-          <a
-            href="#"
-            onMouseEnter={() => soundFX.playHover()}
-            className="hover:text-amber-200 transition"
-          >
+          <a href="#" className="hover:text-amber-200 transition">
             Press & Exhibitions
           </a>
-          <a
-            href="mailto:archive@shadow-journal.com"
-            onMouseEnter={() => soundFX.playHover()}
-            className="text-white hover:text-amber-200 transition"
-          >
+          <a href="mailto:archive@shadow-journal.com" className="text-white hover:text-amber-200 transition">
             Inquiries →
           </a>
         </div>

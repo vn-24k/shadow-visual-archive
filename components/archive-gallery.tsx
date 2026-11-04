@@ -2,7 +2,6 @@
 
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { soundFX } from "./sound-fx";
 
 export function ArchiveGallery() {
   const archives = [
@@ -58,8 +57,6 @@ export function ArchiveGallery() {
         {archives.map((item) => (
           <div
             key={item.series}
-            onMouseEnter={() => soundFX.playHover()}
-            onClick={() => soundFX.playWarmChime()}
             className={`group relative rounded-xl p-6 transition-all duration-300 flex flex-col justify-between min-h-[220px] cursor-pointer ${
               item.highlight
                 ? "bg-gradient-to-b from-amber-200/[0.06] to-transparent border border-amber-300/30 shadow-[0_0_25px_rgba(251,191,36,0.1)]"
